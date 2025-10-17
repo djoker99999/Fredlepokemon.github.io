@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -282,7 +281,6 @@
       width: 400px;
       height: 300px;
       margin: 0 auto;
-      background-image: url('https://i.gifer.com/4o45.gif');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -918,14 +916,26 @@
     let pokemon2HP = 500;
     let totalCoins = 0;
 
-    // Liste des images de ruche
+    // Liste des images de ruche avec les nouveaux GIFs
     const hiveImages = [
       'https://i.gifer.com/4o45.gif',
       'https://i.gifer.com/3nRA.gif',
       'https://i.gifer.com/ZDch.gif',
       'https://i.gifer.com/4QYe.gif',
       'https://i.gifer.com/KbVT.gif',
-      'https://i.gifer.com/5GpG.gif'
+      'https://i.gifer.com/5GpG.gif',
+      'https://i.gifer.com/4OKl.gif',
+      'https://i.gifer.com/Ws1q.gif',
+      'https://i.gifer.com/2N06.gif',
+      'https://i.gifer.com/ZhKN.gif',
+      'https://i.gifer.com/Y60N.gif',
+      'https://i.gifer.com/23xf.gif',
+      'https://i.gifer.com/YEcy.gif',
+      'https://i.gifer.com/1pPh.gif',
+      'https://i.gifer.com/Zbp7.gif',
+      'https://i.gifer.com/4Cj8.gif',
+      'https://i.gifer.com/6Vww.gif',
+      'https://i.gifer.com/T9V.gif'
     ];
     let currentHiveIndex = 0;
 
@@ -1442,6 +1452,10 @@
       
       document.getElementById('pokemon1').classList.remove('defeated');
       document.getElementById('pokemon2').classList.remove('defeated');
+      
+      // Appliquer une image aléatoire au démarrage
+      currentHiveIndex = Math.floor(Math.random() * hiveImages.length);
+      goldBar.style.backgroundImage = `url('${hiveImages[currentHiveIndex]}')`;
       
       goldBar.className = "gold-bar " + currentDifficulty;
       message.textContent = `Ruche ${currentDifficulty === "easy" ? "facile" : currentDifficulty === "medium" ? "moyen" : "difficile"} - À tout moment la ruche peut se briser...`;
